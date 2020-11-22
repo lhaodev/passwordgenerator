@@ -6,10 +6,11 @@ var showPassword = document.querySelector("#password");
 var generateBtn = document.querySelector("#generate");
 var finalPassowrd = [];
 var passwordChoice =[];
-var specialChoice = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var specialChoice = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "|"];
 var numberChoice = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var lowerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperChoice = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
 
 
 
@@ -93,8 +94,9 @@ for (var i=0; i< passwordLength; i++ ) {
   var randomNum = Math.floor(Math.random() * passwordChoice.length);
   finalPassowrd += passwordChoice[randomNum];
 };
-
 console.log(finalPassowrd);
+document.getElementById("password").value='';
+
 }
 
 
@@ -102,9 +104,12 @@ console.log(finalPassowrd);
 // Add event listener to generate button
 generateBtn.addEventListener("click", function(event){
   event.preventDefault();
+  document.getElementById('password').value = '';
   writePassword();
-  showPassword.textContent = finalPassowrd;
+  showPassword.value = finalPassowrd;
 });
+
+  
 
 
 
