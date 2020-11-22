@@ -1,7 +1,4 @@
-
-console.log("I'm connected");
-
-
+// set variables
 var showPassword = document.querySelector("#password");
 var generateBtn = document.querySelector("#generate");
 var finalPassowrd = [];
@@ -12,10 +9,10 @@ var lowerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 var upperChoice = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 
-
-
+// function of write password
 function writePassword() {
-var passwordLength = parseInt(prompt("How many characters do you want your password to have"));
+//set the length of password
+  var passwordLength = parseInt(prompt("How many characters do you want your password to have"));
 if (isNaN(passwordLength)) {
   alert("Please put a number to indicate the password length");    
 } 
@@ -24,14 +21,16 @@ else {
     alert("Password Length must be at least 8 characters.")
   } else if (passwordLength > 24) {
     alert("Password Length must be no more than 24 characters.")
-  } else {
+  } 
+  //confirm what variables to be added in the password
+  else {
   var specialConfirm = confirm("Click OK to confirm including special characters.");
   var lowerConfirm = confirm("Click OK to confirm including lowercases.");
   var upperConfirm = confirm("Click OK to confirm including uppercases.");
   var numberConfirm = confirm("Click OK to confirm including numbers.");
   }  
 };
-
+//use if else if to explore different combinations of password based on user's choice
 if (specialConfirm && lowerConfirm && upperConfirm && numberConfirm) {
   passwordChoice = specialChoice.concat(lowerChoice, upperChoice, numberChoice);  
 } 
@@ -90,20 +89,18 @@ else {
 
 console.log(passwordChoice);
 
+// for loop to randomly choose password for certain length
 for (var i=0; i< passwordLength; i++ ) {
   var randomNum = Math.floor(Math.random() * passwordChoice.length);
   finalPassowrd += passwordChoice[randomNum];
 };
-console.log(finalPassowrd);
-document.getElementById("password").value='';
-
 }
-
 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", function(event){
   event.preventDefault();
+  finalPassowrd = [];
   document.getElementById('password').value = '';
   writePassword();
   showPassword.value = finalPassowrd;
