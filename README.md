@@ -6,7 +6,8 @@ This project is to create an application that users can use to generate a random
 Using the application, user can choose the length of their password and choose to include special character, uppercase letters, lowercase letters and numbers as they want. 
 
 ## screenshot
-![alt tag](https://drive.google.com/file/d/13g_rlcyWZizV75zI5DZ4q9xAJyWowGw_/view?usp=sharing "Password Generator")
+
+![alt text](screenshots/screenshot.png "demo screen");
 
 ## link to the application
 https://lhaodev.github.io/passwordgenerator/
