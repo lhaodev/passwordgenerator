@@ -7,7 +7,7 @@ Using the application, user can choose the length of their password and choose t
 
 ## screenshot
 
-![alt text](screenshots/screenshot.png "demo screen");
+![password generator](screenshot.png "demo screen")
 
 ## link to the application
 https://lhaodev.github.io/passwordgenerator/
