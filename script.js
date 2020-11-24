@@ -89,12 +89,13 @@ else {
 
 console.log(passwordChoice);
 
+
 // for loop to randomly choose password for certain length
 for (var i=0; i< passwordLength; i++ ) {
-  var randomNum = Math.floor(Math.random() * passwordChoice.length);
-  finalPassowrd += passwordChoice[randomNum];
+  finalPassowrd += passwordChoice[Math.floor(Math.random() * passwordChoice.length)];
+  console.log(finalPassowrd);
 };
-}
+};
 
 
 // Add event listener to generate button
@@ -107,10 +108,3 @@ generateBtn.addEventListener("click", function(event){
 });
 
   
-
-
-
-
-
-
-
